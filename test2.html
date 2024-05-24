@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress Arrows Between Boxes</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    position: relative; /* Added */
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 220px); /* Adjusted width */
+    height: 2px;
+    background-color: #333;
+    z-index: -1;
+  }
+
+  .arrow::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #333;
+  }
+
+  .arrow.left {
+    left: 110px; /* Left position for the first arrow */
+  }
+
+  .arrow.right {
+    right: 110px; /* Right position for the second arrow */
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .arrow {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box" id="box1">Box 1</div>
+  <div class="arrow left"></div> <!-- First arrow starting from Box 1 -->
+  <div class="box" id="box2">Box 2</div>
+  <div class="arrow right"></div> <!-- Second arrow starting from Box 2 -->
+  <div class="box" id="box3">Box 3</div>
+</div>
+</body>
+</html>

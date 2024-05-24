@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portrait Cards</title>
+    <link rel="stylesheet" href="styles/protraits.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/util.css">
+    <link rel="stylesheet" href="styles/work.css">
+
+    
+    <!-- ion-icon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+    <header>
+        <ion-icon class="HamMenu " id="open-btn" onclick="togglebtn()" name="menu"></ion-icon>
+
+        <div class="navbar flex-box justify-spacebetween">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo/title-logo.svg" alt="">
+                    <h4>Rahul Verma</h4>
+                </a>
+            </div>
+            <div class="nav-bar flex-box justify-center" id="navbar">
+                <ion-icon class="HamMenu " id="close-btn" onclick="togglebtn()" name="close-circle-outline"></ion-icon>
+                <a class="active" href="work.html">
+                    <li>Work</li>
+                </a>
+                <a href="education.html">
+                    <li>Education</li>
+                </a>
+                <a href="">
+                    <li>About</li>
+                </a>
+                <a href="">
+                    <li>Cv</li>
+                </a>
+                <a href="contact.html">
+                    <li>Contact me</li>
+                </a>
+            </div>
+
+        </div>
+        </div>
+    </header>
+    <main>
+        <div class="portrait-container">
+            <div class="portrait-card">
+                <img src="images/Food & Restaurants/IMG_2090.JPG" alt="Portrait 1" onclick="openLightbox(0)">
+            </div>
+            <div class="portrait-card">
+                <img src="images/Food & Restaurants/IMG_4673.JPG" alt="Portrait 2" onclick="openLightbox(1)">
+            </div>
+            <div class="portrait-card">
+                <img src="images/Food & Restaurants/IMG_4674.JPG" alt="Portrait 3" onclick="openLightbox(2)">
+            </div>
+            <div class="portrait-card">
+                <img src="images/Food & Restaurants/IMG_4675.JPG" alt="Portrait 4" onclick="openLightbox(3)">
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <script src="/scripts/index.js"></script>
+</body>
+</html>
+
